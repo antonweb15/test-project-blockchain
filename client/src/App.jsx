@@ -8,7 +8,6 @@ function App() {
   const [address, setAddress] = useState("");
   const [privateKey, setPrivateKey] = useState("");
 
-
   return (
     <div className="app">
       <Wallet
@@ -19,7 +18,8 @@ function App() {
         address={address}
         setAddress={setAddress}
       />
-      <Transfer setBalance={setBalance} address={address} />
+      {/* Pass privateKey down to Transfer so it can sign the message */}
+      <Transfer setBalance={setBalance} address={address} privateKey={privateKey} />
     </div>
   );
 }
